@@ -1,8 +1,18 @@
 import React, { useContext } from 'react';
 
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact } from 'react-icons/si';
 import { ThemeContext } from '../../ThemeContext';
 import cn from 'classnames';
+import {TechnologyCards}  from '../../components/TechnologyCards';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact } from 'react-icons/si';
+
+
+const technologies = [
+  [<SiHtml5 key={'html-tech'}/>, 'HTML'],
+  [<SiCss3 key={'css-tech'}/>, 'CSS'],
+  [<SiJavascript key={'js-tech'}/>, 'JavaScript'],
+  [<SiTypescript key={'ts-tech'}/>, 'TypeScript'],
+  [<SiReact key={'re-tech'}/>, 'React'],
+];
 
 export const Introduction = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -13,23 +23,6 @@ export const Introduction = () => {
 
       <p className="introduction__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam fugiat facilis, minima animi qui voluptas ipsum hic possimus neque soluta molestiae nisi veritatis quos nihil et molestias esse cum earum. Omnis ipsa id aperiam natus culpa. Iusto commodi cumque repellendus eaque ratione libero tenetur perspiciatis!</p>
 
-      {/* ? remove */}
-      <div className="introduction__technologies">
-        <div className={cn('technology', {'technology--dark': isDarkMode})}>
-          <SiHtml5 /><span>HTML</span>
-        </div>
-        <div className={cn('technology', {'technology--dark': isDarkMode})}>
-          <SiCss3 /><span>CSS</span>
-        </div>
-        <div className={cn('technology', {'technology--dark': isDarkMode})}>
-          <SiJavascript /><span>JavaScript</span>
-        </div>
-        <div className={cn('technology', {'technology--dark': isDarkMode})}>
-          <SiTypescript /><span>TypeScript</span>
-        </div>
-        <div className={cn('technology', {'technology--dark': isDarkMode})}>
-          <SiReact /><span>React</span>
-        </div>
-      </div>
+      <TechnologyCards technologies={technologies} />
     </section>
   );};
