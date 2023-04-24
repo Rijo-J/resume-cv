@@ -10,13 +10,16 @@ export const Header = () => {
   const { isDarkMode } = useContext(ThemeContext);
   
   return (
-    <header className={cn('header', { 'header--dark': isDarkMode })}>
-      <Logo />
-
-      <div className="header__nav">
-        <Navbar />
-        <ToggleSwitch />
-        <a href="/" className='header__menu-opener'/>
+    <header className={cn('header', 'page__header', { 'header--dark': isDarkMode })}>
+      <div className="container">
+        <div className="header__content">
+          <Logo />
+          <div className="header__nav">
+            <Navbar />
+            <ToggleSwitch />
+            <a href="/" className='header__menu-opener'/>
+          </div>
+        </div>
       </div>
     </header>
   );};

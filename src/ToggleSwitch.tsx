@@ -17,12 +17,12 @@ function ToggleSwitch() {
       checked={isDarkMode}
       onChange={handleChange}
       height={height}
-      handleDiameter={height - 4}
+      handleDiameter={height - 2}
       width={height * 2}
       offHandleColor='#eee'
       offColor='#bbb'
       onHandleColor='#aaa'
-      onColor='#666'
+      onColor='#444'
       uncheckedHandleIcon={<svg viewBox="0 -4 20 27"
         height="100%"
         width="100%"

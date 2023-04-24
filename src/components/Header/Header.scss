@@ -1,40 +1,41 @@
 .header {
-  // ?remove
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   background-color: $white;
-  transition: all 0.3s ease;
+  transition: color $transition, background-color $transition;
 
   &--dark {
-  background-color: $secondaryColor;
-  color: $white;
-  transition: all 0.3s ease;
-
+    background-color: $secondaryColor;
+    color: $white;
   }
-  
- &__nav {
-   display: flex;
-   gap: 20px;
-   justify-content: space-between;
-   align-items: center;
-  
-   &:first-child {
-    margin-left: auto;
-    background-color: red;
-   }
- }
 
- &__menu-opener {
-   @include icon-sizing;
+  &__content {
+  // ?remove
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0;
+  }
 
-   display: block;
+  &__nav {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 
-   background-image: url(/images/menu-bars.svg);
+    &:first-child {
+      margin-left: auto;
+      background-color: red;
+    }
+  }
 
-   &:hover {
-     background-image: url(/images/menu-bars-hover.svg);
-   }
- }
+  &__menu-opener {
+    @include icon-sizing;
+
+    display: block;
+
+    background-image: url(/images/menu-bars.svg);
+
+    &:hover {
+      background-image: url(/images/menu-bars-hover.svg);
+    }
+  }
 }

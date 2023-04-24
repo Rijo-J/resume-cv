@@ -1,9 +1,30 @@
 import React from 'react';
+import cn from 'classnames';
+
+import { ThemeContext } from '../../ThemeContext';
+import { navLinks } from '../../content/Content';
 
 export const Navbar = () => {
+  const { isDarkMode } = React.useContext(ThemeContext);
+
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className='navigation'>
+      <ul className="navigation__list">
+        {navLinks.map(({
+          id,
+          text,
+          href,
+        }) => (
+          <li className="navigation__item" key={id}>
+            <a
+              href={href}
+              className={
+                cn('navigation__link',
+                  {'navigation__link--dark': isDarkMode})
+              }>{text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };

@@ -1,0 +1,25 @@
+.navigation {
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.75rem;
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    display: block;
+    padding: $headerHeight 1rem;
+
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: $whiteDark;
+    }
+
+    &--dark {
+      &:hover {
+        background-color: $primaryDarkColor;
+      }
+    }
+  }
+}
