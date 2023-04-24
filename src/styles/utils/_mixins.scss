@@ -1,0 +1,20 @@
+@mixin mediumScreens {
+ @media (min-width: 768px) {
+   @content;
+ }
+}
+
+@mixin largeScreens {
+ @media (min-width: 1024px) {
+   @content;
+ }
+}
+
+@mixin icon-sizing {
+  width: 16px;
+  height: 12px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

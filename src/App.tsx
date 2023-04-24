@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
+import { Header } from './components/Header';
+import { ThemeContext } from './ThemeContext';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+        <Header />
+      </ThemeContext.Provider>
+    </>
   );
 }
 

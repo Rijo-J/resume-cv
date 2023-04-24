@@ -1,0 +1,40 @@
+.header {
+  // ?remove
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: $white;
+  transition: all 0.3s ease;
+
+  &--dark {
+  background-color: $secondaryColor;
+  color: $white;
+  transition: all 0.3s ease;
+
+  }
+  
+ &__nav {
+   display: flex;
+   gap: 20px;
+   justify-content: space-between;
+   align-items: center;
+  
+   &:first-child {
+    margin-left: auto;
+    background-color: red;
+   }
+ }
+
+ &__menu-opener {
+   @include icon-sizing;
+
+   display: block;
+
+   background-image: url(/images/menu-bars.svg);
+
+   &:hover {
+     background-image: url(/images/menu-bars-hover.svg);
+   }
+ }
+}
