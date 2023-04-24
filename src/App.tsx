@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { ThemeContext } from './ThemeContext';
 import { Introduction } from './pages/Introduction';
 import cn from 'classnames';
+import { Experience } from './pages/Experience';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -15,6 +16,7 @@ function App() {
         <main className={cn('page__main', {'page__main--dark': isDarkMode})}>
           <div className="container">
             <Introduction />
+            <Experience />
           </div>
         </main>
       </ThemeContext.Provider>

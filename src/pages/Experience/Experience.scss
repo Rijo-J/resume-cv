@@ -1,0 +1,66 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  align-items: left;
+
+  &__title {
+    font-weight: 700;
+    font-size: 3rem;
+
+    transition: color $transition;
+
+    &--dark {
+      color: $white;
+    }
+
+    &-lead {
+      font-weight: 400;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; 
+
+    @include mediumScreens () {
+      flex-direction: row;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px; 
+
+    @include mediumScreens () {
+      flex-direction: column;
+    }
+
+  }
+
+  &__item {
+    padding: 20px 30px;
+    border-radius: 5px;
+
+    text-align: center;
+
+    background-color: $white;
+
+    &--active {
+      background-color: $whiteDark;
+    }
+  }
+
+  &__summary {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    text-align: justify;
+  }
+}

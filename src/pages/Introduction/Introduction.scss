@@ -17,7 +17,7 @@
 
     &-lead {
       font-family: 'Rubik';
-    font-weight: 400;
+      font-weight: 400;
 
       color: $primaryColor;
     }
@@ -48,15 +48,16 @@
 // ? remove - how can I map through the components
 .technology {
   display: flex;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
 
+  font-family: 'Rubik', sans-serif;
+
   padding: 0.5rem;
-  gap: 0.5rem;
   border-radius: 0.3rem;
 
   color: $secondaryColor;
-
   background-color: $whiteDark;
 
   transition: color $transition, background-color $transition;
