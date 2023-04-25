@@ -5,7 +5,7 @@ import { ThemeContext } from '../../ThemeContext';
 import { navLinks } from '../../content/Content';
 
 export const Navbar = () => {
-  const { isDarkMode } = React.useContext(ThemeContext);
+  const { isDarkModeActive } = React.useContext(ThemeContext);
 
   return (
     <nav className='navigation'>
@@ -20,7 +20,7 @@ export const Navbar = () => {
               href={href}
               className={
                 cn('navigation__link',
-                  {'navigation__link--dark': isDarkMode})
+                  {'navigation__link--dark': isDarkModeActive})
               }>{text}</a>
           </li>
         ))}

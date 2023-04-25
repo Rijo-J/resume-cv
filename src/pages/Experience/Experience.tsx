@@ -1,36 +1,89 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { ThemeContext } from '../../ThemeContext';
 import cn from 'classnames';
 
+import { myExperience } from '../../content/Content';
+
 export const Experience = () => {
-  const { isDarkMode } = useContext(ThemeContext);
-  
+  const [activeCardId, setActiveCardId] = useState(0);
+
+  const { isDarkModeActive } = useContext(ThemeContext);
+
+  const activeExperience = myExperience[activeCardId];
+  const handleSelectCard = (cardId: number) => {
+    setActiveCardId(cardId);
+  };
+
+
   return (
-    <section className="experience page__section">
-      <h2 className={cn('experience__title', {'experience__title--dark': isDarkMode})}>
-        My experience</h2>
+    <section
+      className={cn('experience page__section', {
+        'experience--dark': isDarkModeActive,
+      })}>
+      <h2 className='experience__title'>My experience</h2>
 
-      <div className="experience__summary">
-        <ul className="experience__list">
-          <li className="experience__item experience__item--active">
-            Logo1
-            <span>& company1</span>
-          </li>
+      <div className='experience__summary'>
+        <ul className='experience__list'>
+          {myExperience.map(({
+            id,
+            icon,
+            slug,
+            position,
+            company,
+          }) => (
+            <li
+              key={slug}
+              onClick={() => handleSelectCard(id)}
+              className={cn(
+                'experience__card',
+                {'experience__card--active': activeCardId === id && !isDarkModeActive},
+                {'experience__card--active-dark': activeCardId === id && isDarkModeActive},
+              )}
+            >
+              <div className='experience__icon'>{icon}</div>
 
-          <li className="experience__item">
-            Logo2
-            <span>& company2</span>
-          </li>
+              <div className='experience__card-description'>
+                <div className='experience__card-position'>
+                  {position}
+                </div>
 
-          <li className="experience__item">
-            Logo3
-            <span>& company3</span>
-          </li>
-        </ul >
-        <p className="experience__description">
-          The description
-        </p>
+                <div className='experience__card-company'>
+                  {company}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div className='experience__description'>
+          <div className="experience__location">
+            {activeExperience.shortDescription}
+
+            {activeExperience.link.length !== 0 && (
+              <a href={activeExperience.link} target='_blank' rel="noreferrer">
+                {activeExperience.linkDescription}
+              </a>
+            )}
+          </div>
+
+          <div className="experience__duration">
+            {activeExperience.duration}
+          </div>
+
+          <ul className='experience__responsabilities'>
+            {myExperience[activeCardId]
+              .responsibilities
+              .map((responsability, index) => (
+                <li
+                  key={`responsability-${index}`}
+                  className='experience__responsabilities-item'>
+                  {responsability}
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </section>
-  );};
+  );
+};

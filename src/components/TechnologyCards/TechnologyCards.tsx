@@ -9,7 +9,7 @@ type Props = {
 export const TechnologyCards: FC<Props> = ({
   technologies
 }) => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkModeActive } = useContext(ThemeContext);
 
   return (
     <div className="technologies">
@@ -18,10 +18,10 @@ export const TechnologyCards: FC<Props> = ({
           key={`${technology}`}
           className={cn(
             'technologies__item',
-            {'technologies__item--dark': isDarkMode}
+            {'technologies__item--dark': isDarkModeActive}
           )}>
           {icon}
-          <span>{technology}</span>
+          {technology}
         </div>
       ))}
     </div>

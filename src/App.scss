@@ -33,6 +33,10 @@
   &__section {
     // ?remove - I'm using padding for spacing - would that be acceptable???
     padding-bottom: 5.75rem;
+
+    &:last-child {
+      padding-bottom: 3rem;
+    }
   }
 }
 

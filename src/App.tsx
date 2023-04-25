@@ -7,13 +7,13 @@ import cn from 'classnames';
 import { Experience } from './pages/Experience';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkModeActive, setisDarkModeActive] = useState(false);
 
   return (
     <>
-      <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+      <ThemeContext.Provider value={{ isDarkModeActive, setisDarkModeActive }}>
         <Header />
-        <main className={cn('page__main', {'page__main--dark': isDarkMode})}>
+        <main className={cn('page__main', {'page__main--dark': isDarkModeActive})}>
           <div className="container">
             <Introduction />
             <Experience />

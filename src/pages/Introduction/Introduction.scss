@@ -27,13 +27,14 @@
     }
   }
 
-  &__description {
+  &__responsabilities {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
+    text-align: justify;
+
+    max-width: 800px;
 
     color: $leadColor;
-
-    text-align: justify;
   }
 }

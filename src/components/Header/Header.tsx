@@ -5,12 +5,11 @@ import { Logo } from '../Logo';
 import { Navbar } from '../Navbar/Navbar';
 import { ThemeContext } from '../../ThemeContext';
 
-
 export const Header = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkModeActive } = useContext(ThemeContext);
   
   return (
-    <header className={cn('header', 'page__header', { 'header--dark': isDarkMode })}>
+    <header className={cn('header', 'page__header', { 'header--dark': isDarkModeActive })}>
       <div className="container">
         <div className="header__content">
           <Logo />

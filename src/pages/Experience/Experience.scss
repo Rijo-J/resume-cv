@@ -3,7 +3,13 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  color: $secondaryColor;
+
   align-items: left;
+
+  &--dark {
+    color: $white;
+  }
 
   &__title {
     font-weight: 700;
@@ -11,56 +17,103 @@
 
     transition: color $transition;
 
-    &--dark {
-      color: $white;
-    }
-
     &-lead {
       font-weight: 400;
     }
   }
 
   &__summary {
-    display: flex;
-    flex-direction: column;
-    gap: 32px; 
+    display: grid;
+    gap: 2rem;
+    
+    @include mediumScreens() {
+      grid-template-columns: 1fr 1fr;
+    }
 
-    @include mediumScreens () {
-      flex-direction: row;
+    @include largeScreens() {
+      gap: 4rem;
     }
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 32px; 
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 
-    @include mediumScreens () {
-      flex-direction: column;
+    @include mediumScreens() {
+      grid-template-columns: 1fr;
     }
-
   }
 
-  &__item {
-    padding: 20px 30px;
+  &__card {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
+    padding: 30px 30px;
 
-    text-align: center;
+    cursor: pointer;
 
-    background-color: $white;
+
+    &-description {
+      display: none;
+
+      @include mediumScreens() {
+        display: inline;
+      }
+    }
+
+    &-position {
+      font-size: 1.13rem;
+    }
+
+    &-company {
+      font-size: 0.75rem;
+      color: $leadColor
+    }
 
     &--active {
       background-color: $whiteDark;
+
+      &-dark {
+        background-color: $secondaryLightColor;
+      }
+    }
+
+    @include mediumScreens() {
+      justify-content: left;
     }
   }
 
-  &__summary {
+  .experience__icon {
+    color: inherit;
+    font-size: 2.25rem;
+    margin-bottom: -0.75rem;
+  }
+
+  &__responsabilities {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
 
-    text-align: justify;
+    &-item {
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        margin-right: 0.5rem;
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url(../../images/bullet-list.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
   }
 }

@@ -15,13 +15,13 @@ const technologies = [
 ];
 
 export const Introduction = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkModeActive } = useContext(ThemeContext);
   
   return (
     <section className="introduction page__section">
-      <h1 className={cn('introduction__title', {'introduction__title--dark': isDarkMode})}>Hello I&rsquo;m <span className='introduction__title-lead'>Jon Doe</span></h1>
+      <h1 className={cn('introduction__title', {'introduction__title--dark': isDarkModeActive})}>Hello I&rsquo;m <span className='introduction__title-lead'>Jon Doe</span></h1>
 
-      <p className="introduction__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam fugiat facilis, minima animi qui voluptas ipsum hic possimus neque soluta molestiae nisi veritatis quos nihil et molestias esse cum earum. Omnis ipsa id aperiam natus culpa. Iusto commodi cumque repellendus eaque ratione libero tenetur perspiciatis!</p>
+      <p className="introduction__responsabilities">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam fugiat facilis, minima animi qui voluptas ipsum hic possimus neque soluta molestiae nisi veritatis quos nihil et molestias esse cum earum. Omnis ipsa id aperiam natus culpa. Iusto commodi cumque repellendus eaque ratione libero tenetur perspiciatis!</p>
 
       <TechnologyCards technologies={technologies} />
     </section>

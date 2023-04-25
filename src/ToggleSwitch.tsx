@@ -4,17 +4,17 @@ import { ThemeContext } from './ThemeContext';
 
 function ToggleSwitch() {
 
-  const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+  const { isDarkModeActive, setisDarkModeActive } = useContext(ThemeContext);
 
   const handleChange = () => {
-    setIsDarkMode(currentMode => !currentMode);
+    setisDarkModeActive(currentMode => !currentMode);
   };
 
   const height = 20;
 
   return (
     <ReactSwitch
-      checked={isDarkMode}
+      checked={isDarkModeActive}
       onChange={handleChange}
       height={height}
       handleDiameter={height - 2}
