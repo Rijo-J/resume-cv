@@ -5,6 +5,7 @@ import { Logo } from '../Logo';
 import { Navbar } from '../Navbar/Navbar';
 import { ThemeContext } from '../../ThemeContext';
 
+
 export const Header = () => {
   const { isDarkModeActive } = useContext(ThemeContext);
   
@@ -16,7 +17,10 @@ export const Header = () => {
           <div className="header__nav">
             <Navbar />
             <ToggleSwitch />
-            <a href="/" className='header__menu-opener'/>
+            <a href="#" className={cn(
+              'header__menu-opener',
+              { 'header__menu-opener--dark': isDarkModeActive },
+            )}/>
           </div>
         </div>
       </div>

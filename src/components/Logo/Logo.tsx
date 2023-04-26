@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import logo from '../../images/logo.svg';
+import logoW from '../../images/logo-w.svg';
+import { ThemeContext } from '../../ThemeContext';
 
-const logoDescription = 'Hello I\'m John Doe';
+const logoDescription = 'Curriculum Joao';
 
-export const Logo = () => (
-  <a href="/" className="logo">
-    <img src={'https://www.svgrepo.com/show/424896/react-logo-programming-2.svg'}
-      height={35} alt={logoDescription} className="logo__image" />
-  </a>
-);
+
+export const Logo = () => {
+  const { isDarkModeActive } = useContext(ThemeContext);
+  
+  return (
+    <a href="#" className="logo">
+
+
+      <img src={isDarkModeActive ? logoW : logo}
+        height={45}
+        alt={logoDescription}
+        className="logo__image"
+      />
+    </a>
+  );};

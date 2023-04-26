@@ -35,9 +35,20 @@
     display: block;
 
     background-image: url(/images/menu-bars.svg);
+    transition: background-image $transition, color $transition;
 
     &:hover {
       background-image: url(/images/menu-bars-hover.svg);
     }
+
+    &--dark {
+      background-image: url(/images/menu-bars-w.svg);
+      transition: background-image $transition, color $transition;
+
+      &:hover {
+        background-image: url(/images/menu-bars-hover-w.svg);
+      }
+    }
   }
+
 }
