@@ -12,12 +12,12 @@ export const navLinks = [
   {
     id:1,
     text:'Curriculum',
-    href: '/',
+    href: '/experience',
   },
   {
     id:2,
     text:'Projects',
-    href: '/',
+    href: '/projects',
   },
 ];
 

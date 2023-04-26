@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
+import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '../../ThemeContext';
 import { navLinks } from '../../content/Content';
 
@@ -16,12 +17,16 @@ export const Navbar = () => {
           href,
         }) => (
           <li className="navigation__item" key={id}>
-            <a
-              href={href}
-              className={
+            <NavLink
+              to={href}
+              className={({ isActive }) =>
                 cn('navigation__link',
-                  {'navigation__link--dark': isDarkModeActive})
-              }>{text}</a>
+                  {'navigation__link--dark': isDarkModeActive},
+                  {'navigation__link--active': isActive},
+                )
+              }>
+              {text}
+            </NavLink>
           </li>
         ))}
       </ul>

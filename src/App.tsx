@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
+
+import { Navigate, Routes, Route } from 'react-router-dom';
 import cn from 'classnames';
 import { Header } from './components/Header';
 import { ThemeContext } from './ThemeContext';
@@ -17,10 +19,13 @@ function App() {
         <Header />
         <main className={cn('page__main', {'page__main--dark': isDarkModeActive})}>
           <div className="container">
-
-            <Introduction />
-            <Experience />
-            <Projects />
+            <Routes>
+              <Route path="/" element={ <Introduction /> } />
+              <Route path="/home" element={ <Navigate to='/' />} />
+              <Route path="/experience" element={ <Experience />} />
+              <Route path="/projects" element={ <Projects />} />
+              <Route path="*" element={ <Navigate to='/' /> } />
+            </Routes>
           </div>
         </main>
         <Footer />

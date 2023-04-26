@@ -49,6 +49,9 @@
         background-image: url(/images/menu-bars-hover-w.svg);
       }
     }
-  }
 
+    @include mediumScreens {
+      display: none;
+    }
+  }
 }

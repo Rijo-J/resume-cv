@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import logoW from '../../images/logo-w.svg';
 import { ThemeContext } from '../../ThemeContext';
@@ -10,13 +12,11 @@ export const Logo = () => {
   const { isDarkModeActive } = useContext(ThemeContext);
   
   return (
-    <a href="#" className="logo">
-
-
+    <Link to="/" className="logo">
       <img src={isDarkModeActive ? logoW : logo}
         height={45}
         alt={logoDescription}
         className="logo__image"
       />
-    </a>
+    </Link>
   );};
