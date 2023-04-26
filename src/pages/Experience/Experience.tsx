@@ -1,20 +1,26 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+
+import { experience } from '../../content/Content';
 
 import { ThemeContext } from '../../ThemeContext';
+import { WorkDescription } from '../../components/WorkDescription';
 import cn from 'classnames';
 
-import { myExperience } from '../../content/Content';
 
 export const Experience = () => {
   const [activeCardId, setActiveCardId] = useState(0);
+  const [activeExperience, setActiveExperience] = useState(experience[0]);
+
+  useEffect(() => {
+    setActiveExperience(() => experience[activeCardId]);
+  }, [activeCardId]);
+  
 
   const { isDarkModeActive } = useContext(ThemeContext);
 
-  const activeExperience = myExperience[activeCardId];
   const handleSelectCard = (cardId: number) => {
-    setActiveCardId(cardId);
+    setActiveCardId(() => cardId);
   };
-
 
   return (
     <section
@@ -25,7 +31,7 @@ export const Experience = () => {
 
       <div className='experience__summary'>
         <ul className='experience__list'>
-          {myExperience.map(({
+          {experience.map(({
             id,
             icon,
             slug,
@@ -56,33 +62,7 @@ export const Experience = () => {
           ))}
         </ul>
 
-        <div className='experience__description'>
-          <div className="experience__location">
-            {activeExperience.shortDescription}
-
-            {activeExperience.link.length !== 0 && (
-              <a href={activeExperience.link} target='_blank' rel="noreferrer">
-                {activeExperience.linkDescription}
-              </a>
-            )}
-          </div>
-
-          <div className="experience__duration">
-            {activeExperience.duration}
-          </div>
-
-          <ul className='experience__responsabilities'>
-            {myExperience[activeCardId]
-              .responsibilities
-              .map((responsability, index) => (
-                <li
-                  key={`responsability-${index}`}
-                  className='experience__responsabilities-item'>
-                  {responsability}
-                </li>
-              ))}
-          </ul>
-        </div>
+        <WorkDescription workDetails={activeExperience} workId={activeCardId} />
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 @import "styles/main.scss";
 
-// ?remove where should I insert these styles?
 .page {
   font-family: 'Source Code', monospace;
   font-size: 16px;
@@ -16,11 +15,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  &__header {
-    padding-bottom: 5.75rem;
-  }
-
+  
   &__main {
+    padding-top: 5.75rem;
     background-color: $white;
 
     transition: background-color $transition;
@@ -31,7 +28,6 @@
   }
 
   &__section {
-    // ?remove - I'm using padding for spacing - would that be acceptable???
     padding-bottom: 5.75rem;
 
     &:last-child {
