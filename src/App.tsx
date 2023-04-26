@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.scss';
 import cn from 'classnames';
 import { Header } from './components/Header';
@@ -12,16 +13,21 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ isDarkModeActive, setisDarkModeActive }}>
-        <Header />
-        <main className={cn('page__main', {'page__main--dark': isDarkModeActive})}>
-          <div className="container">
-            <Introduction />
-            <Experience />
-            <Projects />
-          </div>
-        </main>
-      </ThemeContext.Provider>
+      <Router>
+        <ThemeContext.Provider value={{ isDarkModeActive, setisDarkModeActive }}>
+          <Header />
+          <main className={cn('page__main', {'page__main--dark': isDarkModeActive})}>
+            <div className="container">
+
+              <Routes>
+                <Route path='/' element={<Introduction />}/>
+                <Route path='/experience' element={<Experience />}/>
+                <Route path='/projects' element={<Projects />}/>
+              </Routes>
+            </div>
+          </main>
+        </ThemeContext.Provider>
+      </Router>
     </>
   );
 }
