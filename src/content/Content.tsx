@@ -85,3 +85,52 @@ export const experience = [
     ],
   },
 ];
+
+export const projectsContent = [
+  {
+    id:0,
+    title:'Bose landing page',
+    date: 'Dez 2022',
+    demoLink: 'https://rijo-j.github.io/layout_miami/',
+    repoLink: 'https://github.com/Rijo-J/layout_miami/tree/develop',
+    imgURL: 'src/images/bose.png',
+    technologies: [
+      'HTML',
+      'SCSS',
+      'JavaScript',
+      'BEM',
+    ],
+  },
+  {
+    id: 1,
+    title:'To-do list web app',
+    date: 'Feb 2023',
+    demoLink: 'https://rijo-j.github.io/react_todo-app-with-api/',
+    repoLink: 'https://github.com/Rijo-J/react_todo-app-with-api/tree/develop',
+    imgURL: 'src/images/todo-app.png',
+    technologies: [
+      'TypeScript',
+      'React',
+      'HTML',
+      'SCSS',
+      'Bulma',
+      'REST API',
+    ],
+  },
+  {
+    id: 2,
+    title:'Users Table UI mockup',
+    date: 'Feb 2023',
+    demoLink: 'https://rijo-j.github.io/react_people-table-advanced/#/people',
+    repoLink: 'https://github.com/Rijo-J/react_people-table-advanced/tree/develop',
+    imgURL: 'src/images/people-table.png',
+    technologies: [
+      'TypeScript',
+      'React',
+      'HTML',
+      'SCSS',
+      'Bulma',
+      'REST API',
+    ],
+  },
+];

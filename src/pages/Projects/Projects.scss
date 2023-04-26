@@ -1,0 +1,38 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  color: $secondaryColor;
+
+  align-items: left;
+
+  &--dark {
+    color: $white;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 3rem;
+
+    transition: color $transition;
+
+    &-lead {
+      color: $primaryColor;
+      font-weight: 400;
+    }
+  }
+
+  &__list {
+    display: grid;
+    padding: auto;
+
+    gap: 10px;
+    grid-template-columns: 1fr;
+
+    @include largeScreens {
+      grid-template-columns: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

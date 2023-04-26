@@ -5,34 +5,54 @@ import { HiOutlineExternalLink } from 'react-icons/hi';
 
 import { ThemeContext } from '../../ThemeContext';
 import cn from 'classnames';
+import { Project } from '../../utils/types/Project';
+import { TechnologyCards } from '../TechnologyCards';
 
-export const ProjectCard = () => {
+type Props = {
+  project: Project
+}
+
+export const ProjectCard: React.FC<Props> = ({
+  project
+}) => {
   const { isDarkModeActive } = useContext(ThemeContext);
+  const {title, date, demoLink, repoLink, technologies, imgURL } = project;
+
   return (
     <div
       className={cn('project-card', {
         'project-card--dark': isDarkModeActive,
       })}>
       <div className='project-card__heading'>
-        <h3 className='project-card__title'>Bose landing page</h3>
-        <div className='project-card__year'>Nov 2022</div>
+        <h3 className='project-card__title'>{title}</h3>
+        <div className='project-card__year'>{date}</div>
       </div>
 
       <a
-        href='https://github.com/Rijo-J/layout_miami/tree/develop'
+        href={repoLink}
         target='_blank'
         rel='noreferrer'
         className='project-card__link'
+        // style={{backgroundImage: `src(${require(imgURL)})`}}
       />
 
       <div className='project-card__info'>
         <div className="project-card__technologies">
-          TECH
+          {technologies.map((tech, i)  => (
+            <div
+              key={`${tech}-${i}`}
+              className={cn('project-card__technology', {
+                'project-card__technology--dark': isDarkModeActive,
+              })}
+            >
+              {tech}
+            </div>
+          ))}
         </div>
 
         <div className="project-card__externals">
           <a
-            href='https://github.com/Rijo-J/layout_miami/tree/develop'
+            href={repoLink}
             target='_blank'
             rel='noreferrer'
             className="project-card__external"
@@ -41,7 +61,7 @@ export const ProjectCard = () => {
           </a>
 
           <a
-            href='https://github.com/Rijo-J/layout_miami/tree/develop'
+            href={demoLink}
             target='_blank'
             rel='noreferrer'
             className="project-card__external"
