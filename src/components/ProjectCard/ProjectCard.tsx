@@ -15,7 +15,15 @@ export const ProjectCard: React.FC<Props> = ({
   project
 }) => {
   const { isDarkModeActive } = useContext(ThemeContext);
-  const {title, date, demoLink, repoLink, technologies, id } = project;
+  const {
+    title,
+    date,
+    demoLink,
+    repoLink,
+    technologies,
+    id,
+    description
+  } = project;
 
   return (
     <div
@@ -73,7 +81,7 @@ export const ProjectCard: React.FC<Props> = ({
       </div>
 
       <div className="project-card__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quod possimus dolorem asperiores harum veritatis distinctio laborum commodi eligendi autem.
+        {description}
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ export const projectsContent = [
     date: 'Dez 2022',
     demoLink: 'https://rijo-j.github.io/layout_miami/',
     repoLink: 'https://github.com/Rijo-J/layout_miami/tree/develop',
-    imgURL: '../bose.png',
+    description: 'Practical execution of BOSE landing with Figma design according to best practices and methodologies such as BEM, pixel-perfect, mobile-first and screen-responsiveness for cross-device.',
     technologies: [
       'HTML',
       'SCSS',
@@ -107,7 +107,7 @@ export const projectsContent = [
     date: 'Feb 2023',
     demoLink: 'https://rijo-j.github.io/react_todo-app-with-api/',
     repoLink: 'https://github.com/Rijo-J/react_todo-app-with-api/tree/develop',
-    imgURL: 'images/todo-app.png',
+    description: 'Application developed with React, TypeScript, JavaScript, REST API and Bulma. Standard tool for someone who usuually and often forgets about stuff!!',
     technologies: [
       'TypeScript',
       'React',
@@ -123,7 +123,7 @@ export const projectsContent = [
     date: 'Feb 2023',
     demoLink: 'https://rijo-j.github.io/react_people-table-advanced/#/people',
     repoLink: 'https://github.com/Rijo-J/react_people-table-advanced/tree/develop',
-    imgURL: '../../../src/images/people-table.png',
+    description: 'React application focusing on React Router and searchParams, TypeScript / JavaScript, REST API, and Bulma style library. App displays a table of mock people\'s information fetched from the API.',
     technologies: [
       'TypeScript',
       'React',

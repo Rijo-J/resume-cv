@@ -4,6 +4,6 @@ export interface Project {
  date: string,
  demoLink: string,
  repoLink: string,
- imgURL: string,
+ description: string,
  technologies: string[],
 }
