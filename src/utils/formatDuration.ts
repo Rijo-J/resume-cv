@@ -20,10 +20,8 @@ export const formatDuration = (date: string | null) => {
     year: 0,
     hour: 0,
     minute: 0,
-    second: 0,
   };
 
-  timeCounts.second = Math.floor(seconds % 60);
   timeCounts.minute = Math.floor((seconds / 60) % 60);
   timeCounts.hour = Math.floor((seconds / 3600) % (24 * 365));
   timeCounts.year = currentYear - previousYear;

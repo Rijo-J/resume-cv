@@ -6,7 +6,6 @@ import { HiOutlineExternalLink } from 'react-icons/hi';
 import { ThemeContext } from '../../ThemeContext';
 import cn from 'classnames';
 import { Project } from '../../utils/types/Project';
-import { TechnologyCards } from '../TechnologyCards';
 
 type Props = {
   project: Project
@@ -16,7 +15,7 @@ export const ProjectCard: React.FC<Props> = ({
   project
 }) => {
   const { isDarkModeActive } = useContext(ThemeContext);
-  const {title, date, demoLink, repoLink, technologies, imgURL } = project;
+  const {title, date, demoLink, repoLink, technologies, id } = project;
 
   return (
     <div
@@ -32,8 +31,10 @@ export const ProjectCard: React.FC<Props> = ({
         href={repoLink}
         target='_blank'
         rel='noreferrer'
-        className='project-card__link'
-        // style={{backgroundImage: `src(${require(imgURL)})`}}
+        className={cn(
+          'project-card__link',
+          `project-card__link--p${id}`
+        )}
       />
 
       <div className='project-card__info'>

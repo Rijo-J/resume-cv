@@ -1,21 +1,22 @@
-.header {
+.footer {
   position: sticky;
-  top: 0;
-
+  
   background-color: $whiteDark;
   transition: color $transition, background-color $transition;
 
+  
   &--dark {
-    background-color: $secondaryDarkColor;
+    background-color: $secondaryLightColor;
     color: $white;
   }
-
+  
   &__content {
+    height: 100px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    height: 62px;
+    line-height: 0;
   }
 
   &__nav {

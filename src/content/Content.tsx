@@ -93,7 +93,7 @@ export const projectsContent = [
     date: 'Dez 2022',
     demoLink: 'https://rijo-j.github.io/layout_miami/',
     repoLink: 'https://github.com/Rijo-J/layout_miami/tree/develop',
-    imgURL: 'src/images/bose.png',
+    imgURL: '../bose.png',
     technologies: [
       'HTML',
       'SCSS',
@@ -107,7 +107,7 @@ export const projectsContent = [
     date: 'Feb 2023',
     demoLink: 'https://rijo-j.github.io/react_todo-app-with-api/',
     repoLink: 'https://github.com/Rijo-J/react_todo-app-with-api/tree/develop',
-    imgURL: 'src/images/todo-app.png',
+    imgURL: 'images/todo-app.png',
     technologies: [
       'TypeScript',
       'React',
@@ -123,7 +123,7 @@ export const projectsContent = [
     date: 'Feb 2023',
     demoLink: 'https://rijo-j.github.io/react_people-table-advanced/#/people',
     repoLink: 'https://github.com/Rijo-J/react_people-table-advanced/tree/develop',
-    imgURL: 'src/images/people-table.png',
+    imgURL: '../../../src/images/people-table.png',
     technologies: [
       'TypeScript',
       'React',

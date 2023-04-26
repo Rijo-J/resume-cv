@@ -23,44 +23,17 @@ export const WorkDescription: React.FC<Props> = ({
   const [endTimer, setEndTimer] = useState<string | null>(formatDuration(endDate));
 
   useEffect(() => {
-    setStartTimer(() => formatDuration(startDate));
-    setEndTimer(() => formatDuration(endDate));
-  }, []);
+    setStartTimer(formatDuration(startDate));
+    setEndTimer(formatDuration(endDate));
 
-  useEffect(() => {
-    setStartTimer(() => formatDuration(startDate));
-    setEndTimer(() => formatDuration(endDate));
+    const interval = setInterval(() => {
+      setStartTimer(formatDuration(startDate));
+      setEndTimer(formatDuration(endDate));
+    }, 60000);
 
-  }, [workId]);
+    return () => clearInterval(interval);
+  }, [workId, startDate, endDate]);
 
-  useEffect(() => {
-    const startToSet = formatDuration(startDate);
-
-    const startTimerName = window.setInterval(() => {
-
-      setStartTimer(() => startToSet);
-    }, 3000);
-  
-    return () => {
-      window.clearInterval(startTimerName);
-    };
-  }, [workId, startTimer]);
-
-  useEffect(() => {
-    const endToSet = formatDuration(endDate);
-
-    const endTimerName = window.setInterval(() => {
-      setEndTimer(() => endToSet);
-      
-    }, 3000);
-  
-    return () => {
-      window.clearInterval(endTimerName);
-    };
-  }, [workId, endTimer]);
-  
-  
-  
 
   return (
     <div className='experience__description'>
